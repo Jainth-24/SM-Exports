@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ButtonGroup } from "@components/Button";
 import { Icon } from "@iconify/react";
+import logo from "../../public/logo.png";
 
 const DATA = [
     {
@@ -61,24 +62,30 @@ export const Footer = () => {
                     <div className="footer-links mb-12 grid grid-cols-2 gap-8 md:mb-16 md:grid-cols-8 lg:grid-cols-12">
                         <div className="col-span-6">
                             <div className="footer--logo grid gap-8">
-                                <Link href="/">
-                                    <Image
-                                        src="/nutritrack.svg"
-                                        alt="logo"
-                                        className="h-10 w-auto"
-                                        height="25"
-                                        width="100"
-                                        priority
-                                    />
-                                </Link>
+                                <h1 className="logo mb-0">
+                                    <Link href="/">
+                                        <Image
+                                            src={logo}
+                                            alt="logo"
+                                            className="h-14 w-20"
+                                            height="1000"
+                                            width="1000"
+                                            priority
+                                        />
+                                        <h1 className="font-semibold text-2xl pt-3 mb-0">
+                                            SM EXPORTS
+                                        </h1>
+                                    </Link>
+                                </h1>
+
                                 {/* Get Template button; remove if not used */}
                                 <ButtonGroup alignment="left">
                                     <a
                                         role="button"
-                                        href="https://github.com/christian-luntok/nutritrack"
+                                        href="/contact"
                                         className="btn btn--secondary"
                                     >
-                                        Get Template
+                                        Shop Now
                                         <Icon icon="material-symbols:arrow-forward-rounded" />
                                     </a>
                                 </ButtonGroup>
@@ -127,17 +134,8 @@ export const Footer = () => {
             <SectionContainer className="footer-credits relative z-10">
                 <div className="wrap wrap-px py-6">
                     <p className="my-0">
-                        © {year} Nutritrack. All rights reserved{" - "}
-                        <span className="font-normal">
-                            A template by{" "}
-                            <Link
-                                className="transition-colors duration-300 hover:underline"
-                                href="https://chrstnl.com"
-                                target="_blank"
-                            >
-                                chrstnl.
-                            </Link>
-                        </span>
+                        © {year} SM EXPORTS. All rights reserved
+                       
                     </p>
                 </div>
             </SectionContainer>

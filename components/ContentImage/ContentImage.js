@@ -1,34 +1,15 @@
 import { SectionContainer } from "@components/Section";
 import { Icon } from "@iconify/react";
 import Image from "next/image";
-import { v4 as uuid } from "uuid";
 
-const ContentImageData = [
-    {
-        id: uuid(),
-        title: "Effortless Planning",
-        content:
-            "Say goodbye to meal planning stress! With NutriTrack, planning your meals becomes a breeze. Our user-friendly Notion template lets you create customized daily or weekly meal plans effortlessly. Enjoy a balanced and nutritious diet without the hassle.",
-        align: "right",
-        image: "/features1.png"
-    },
-    {
-        id: uuid(),
-        title: "Shopping List",
-        content:
-            "We've got your grocery shopping covered! NutriTrack includes a handy shopping list feature. As you plan your meals, the template automatically generates a comprehensive shopping list. No more forgotten items or aimless wandering in the supermarket. Shopping for healthy ingredients has never been easier!",
-        align: "left",
-        image: "/features2.png"
-    }
-];
-
-export const ContentImage = () => {
+export const ContentImage = ({features}) => {
+    console.log({features})
     return (
         <SectionContainer className="process-items mt-16 space-y-16">
-            {ContentImageData.map((item) => (
+            {features.map((item) => (
                 <div
-                    id={item.id}
-                    key={item.id}
+                    id={item._uid}
+                    key={item._uid}
                     className="process-item--container grid md:grid-cols-2 gap-y-8"
                 >
                     <div
@@ -37,7 +18,7 @@ export const ContentImage = () => {
                         }`}
                     >
                         <Image
-                            src={item.image}
+                            src={item.image.filename}
                             width={512}
                             height={512}
                             objectFit="cover"

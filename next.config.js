@@ -11,7 +11,7 @@ const nextConfig = {
     },
     images: {
         formats: ["image/avif", "image/webp"],
-        domains: ["s.gravatar.com"]
+        domains: ["s.gravatar.com","a.storyblok.com"]
     },
     env: {
         siteTitle: "Your Company",
@@ -21,21 +21,6 @@ const nextConfig = {
         siteImagePreviewUrl: "/images/preview.jpeg",
         twitterHandle: "@your_handle"
     },
-    headers() {
-        return [
-            {
-                source: "/(.*)",
-                headers: [
-                    ...createSecureHeaders(),
-                    // HSTS Preload: https://hstspreload.org/
-                    {
-                        key: "Strict-Transport-Security",
-                        value: "max-age=63072000; includeSubDomains; preload"
-                    }
-                ]
-            }
-        ];
-    }
 };
 
 module.exports = nextConfig;

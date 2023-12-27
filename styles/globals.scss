@@ -35,3 +35,18 @@
 
 // Core Plugins
 // @import "plugins/plugin-tailwind";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  [type="text"],
+  [type="email"],
+  [type="tel"],
+  select {
+    @apply w-full border-gray-300 rounded-lg shadow-sm focus:border-indigo-500 focus:ring-indigo-500;
+  }
+}
+html,
+body {
+  background-color: #f4f4f4;
+}

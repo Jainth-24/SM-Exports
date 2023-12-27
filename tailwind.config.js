@@ -1,9 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+    darkMode: ["class"],
     content: [
         "./pages/**/*.{js,jsx}",
+        "./storyblok-components/**/*.{js,jsx}",
         "./components/**/*.{js,jsx}",
-        "./utils/**/*.{js,jsx}"
+        "./components/**/**/*.{js,jsx}",
+        "./utils/**/*.{js,jsx}",
+        "./@/components/**/*.{js,jsx}"
     ],
     theme: {
         extend: {
