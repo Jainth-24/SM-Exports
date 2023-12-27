@@ -78,8 +78,11 @@ export default function Home({ stories }) {
                                 <p>{moreFeatures?.subtitle}</p>
                             </Content>
                             <CardGroup className="grid scroll-m-24 gap-8 grid-cols-1 max-w-4xl mx-auto mt-24 md:grid-cols-2">
-                                {moreFeatures?.cards.map((card) => (
-                                    <Card className="col-span-1 text-primary-900">
+                                {moreFeatures?.cards.map((card, key) => (
+                                    <Card
+                                        key={key}
+                                        className="col-span-1 text-primary-900"
+                                    >
                                         <CardBody className="w-full bg-white-600/20 p-12">
                                             <CardImage
                                                 src={card.image.filename}
