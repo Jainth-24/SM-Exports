@@ -27,6 +27,7 @@ export default function Home({ stories }) {
 
     const feature = story.content.feature?.[0];
     const moreFeatures = story.content.moreFeatures?.[0];
+    const faq = story.content.faq;
     return (
         <Layout className="" products={productstories}>
             <SEO
@@ -112,7 +113,7 @@ export default function Home({ stories }) {
                                 <br></br>No worries! We&apos;ve got the answers
                                 you need:
                             </PageTitle>
-                            <Accordion />
+                            <Accordion faq={faq} />
                         </SectionContainer>
                     </MotionBTTContainer>
                 </SectionContainer>
@@ -121,24 +122,18 @@ export default function Home({ stories }) {
     );
 }
 export async function getStaticProps() {
+    let sbParams = {
+        version: "draft"
+    };
 
+    const storyblokApi = getStoryblokApi();
 
-        let sbParams = {
-            version: "draft" 
-        };
-     
-        const storyblokApi = getStoryblokApi();
-    
+    let { data } = await storyblokApi.get(`cdn/stories/`, sbParams);
 
-        let { data } = await storyblokApi.get(`cdn/stories/`, sbParams);
-        console.log({ data });
-
-        return {
-            props: {
-                stories: data ? data.stories : false
-            },
-            revalidate: 3600
-        };
-   
+    return {
+        props: {
+            stories: data ? data.stories : false
+        },
+        revalidate: 3600
+    };
 }
-

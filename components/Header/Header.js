@@ -1,12 +1,19 @@
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { SectionContainer } from "@components/Section";
 import { Nav } from "@components/Nav";
 import { ButtonGroup, Button } from "@components/Button";
 import { Icon } from "@iconify/react";
-import logo from "../../public/logo.png"
+import logo from "../../public/logo.png";
 
 export const Header = ({ products }) => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const handleToggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
+
     return (
         <header
             id="header"
@@ -26,12 +33,18 @@ export const Header = ({ products }) => {
                             />
                         </Link>
                     </h1>
-                    <h1 className="font-semibold text-2xl pt-1 mb-0">
+                    <h1
+                        className={
+                            "block font-semibold text-2xl pt-1 mb-0 max-md:text-xl"
+                        }
+                    >
                         SM EXPORTS
                     </h1>
                 </div>
                 <SectionContainer className="flex items-center ml-auto">
-                    <Nav products={products}/>
+                    <div className="hidden md:block">
+                        <Nav products={products} />
+                    </div>
                     <ButtonGroup className="hidden md:block">
                         <a
                             role="button"
@@ -42,9 +55,26 @@ export const Header = ({ products }) => {
                             <Icon icon="material-symbols:arrow-forward-rounded" />
                         </a>
                     </ButtonGroup>
+                    {/* Mobile Toggle Button */}
+                    <button
+                        className="md:hidden ml-4"
+                        onClick={handleToggleMenu}
+                    >
+                        <Icon
+                            icon={"fluent-mdl2:collapse-menu"}
+                            style={{ fontSize: "24px" }}
+                        />
+                    </button>
                 </SectionContainer>
             </SectionContainer>
+
+            {/* Mobile Menu Modal */}
+            {isMenuOpen && (
+                <div className="flex justify-center">
+                    {/* Add your mobile menu content here */}
+                    {isMenuOpen && <Nav products={products} />}
+                </div>
+            )}
         </header>
     );
 };
-

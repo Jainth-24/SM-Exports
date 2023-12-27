@@ -4,7 +4,6 @@ import SEO from "@components/SEO/SEO";
 import { getStoryblokApi } from "@storyblok/react";
 
 function ProductPage({ product, allProducts }) {
-    console.log({ allProducts });
     return (
         <Layout products={allProducts}>
             <SEO

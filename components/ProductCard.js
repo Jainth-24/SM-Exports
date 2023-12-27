@@ -10,8 +10,6 @@ function ProductCard({ product }) {
 
     const imageNode = product?.content?.image?.[0];
 
-    console.log({ handle });
-
     return (
         <Link href={`/${handle}`} passHref legacyBehavior>
             <a className="h-120 w-80 rounded-lg shadow-lg mx-auto border border-palette-lighter transform duration-500 ease-in-out hover:scale-105 ">

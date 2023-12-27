@@ -40,7 +40,7 @@ const accordionItemType = {
     bottom: "border border-t-0 rounded-b-lg"
 };
 
-export const Accordion = () => {
+export const Accordion = ({faq}) => {
     const [activeAccordion, setActiveAccordion] = useState(null);
 
     const accordionClickHandle = (id) => {
@@ -49,10 +49,10 @@ export const Accordion = () => {
 
     return (
         <SectionContainer className="accordion--container my-16 drop-shadow-xl max-w-3xl mx-auto offset-y-0 offset-x-8">
-            {accordionData.map((accordionItem, index) => (
+            {faq.map((accordionItem, index) => (
                 <div
-                    key={accordionItem.id}
-                    id={accordionItem.id}
+                    key={accordionItem._uid}
+                    id={accordionItem._uid}
                     className={clsx(
                         "accordion-item--container border border-neutral-200 bg-white overflow-hidden",
                         {
@@ -73,7 +73,7 @@ export const Accordion = () => {
                                 accordionClickHandle(accordionItem.id)
                             }
                         >
-                            {accordionItem.title}
+                            {accordionItem.question}
                             <Icon
                                 icon="material-symbols:keyboard-arrow-up-rounded"
                                 className="ml-auto h-8 w-8 shrink-0 rotate-[-180deg] transition-transform duration-200 ease-in-out motion-reduce:transition-none"
@@ -90,7 +90,7 @@ export const Accordion = () => {
                             }
                         )}
                     >
-                        <p>{accordionItem.content}</p>
+                        <p>{accordionItem.answer}</p>
                     </div>
                 </div>
             ))}

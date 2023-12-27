@@ -7,7 +7,7 @@ import logo from "../../public/logo.png";
 
 const DATA = [
     {
-        title: "Template",
+        title: "Home",
         items: [
             {
                 label: "Features",
@@ -28,22 +28,22 @@ const DATA = [
         items: [
             {
                 label: "About",
-                href: "https://github.com/christian-luntok/",
+                href: "https://github.com/",
                 target: "_blank"
             },
             {
                 label: "Twitter",
-                href: "https://github.com/christian-luntok/",
+                href: "https://github.com/",
                 target: "_blank"
             },
             {
                 label: "Instagram",
-                href: "https://github.com/christian-luntok/",
+                href: "https://github.com/",
                 target: "_blank"
             },
             {
                 label: "Facebook",
-                href: "https://github.com/christian-luntok/",
+                href: "https://github.com/",
                 target: "_blank"
             }
         ]
@@ -78,17 +78,7 @@ export const Footer = () => {
                                     </Link>
                                 </h1>
 
-                                {/* Get Template button; remove if not used */}
-                                <ButtonGroup alignment="left">
-                                    <a
-                                        role="button"
-                                        href="/contact"
-                                        className="btn btn--secondary"
-                                    >
-                                        Shop Now
-                                        <Icon icon="material-symbols:arrow-forward-rounded" />
-                                    </a>
-                                </ButtonGroup>
+                                
                             </div>
                         </div>
                         <div className="col-span-6">

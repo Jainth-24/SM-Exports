@@ -3,7 +3,6 @@ import { Icon } from "@iconify/react";
 import Image from "next/image";
 
 export const ContentImage = ({features}) => {
-    console.log({features})
     return (
         <SectionContainer className="process-items mt-16 space-y-16">
             {features.map((item) => (

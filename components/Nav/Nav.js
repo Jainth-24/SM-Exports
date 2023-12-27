@@ -16,47 +16,8 @@ import {
 } from "@/components/ui/navigation-menu";
 import Image from "next/image";
 
-const components = [
-    {
-        title: "Rice",
-        href: "/products/rice",
-        description:
-            "High-quality rice varieties sourced from the finest fields to elevate your culinary experience."
-    },
-    {
-        title: "Pepper",
-        href: "/products/pepper",
-        description:
-            "Premium pepper varieties selected for their rich flavors, adding a distinctive taste to your dishes."
-    },
-    {
-        title: "Brown sugar",
-        href: "/products/brown-sugar",
-        description:
-            "Delicious brown sugar options to sweeten your recipes, carefully crafted for optimal taste and texture."
-    },
-    {
-        title: "Onion",
-        href: "/products/onion",
-        description:
-            "Fresh and aromatic onions to enhance the flavor profile of your favorite meals."
-    },
-    {
-        title: "Chills",
-        href: "/products/chills",
-        description:
-            "A curated selection of the finest chili products to add the perfect amount of heat to your culinary creations."
-    },
-    {
-        title: "Wheat flour",
-        href: "/products/wheat-flour",
-        description:
-            "Premium wheat flour for baking and cooking, ensuring exceptional results in every dish you prepare."
-    }
-];
 
 export function Nav({ products }) {
-    console.log({ products });
     return (
         <NavigationMenu>
             <NavigationMenuList>
@@ -80,7 +41,7 @@ export function Nav({ products }) {
                                             width="100"
                                             priority
                                         />
-                                        <div className="mb-2 mt-4 text-lg font-medium">
+                                        <div className="mb-2 mt-4 text-lg font-medium ">
                                             SM Exports
                                         </div>
                                         <p className="text-sm leading-tight text-muted-foreground">
@@ -108,7 +69,7 @@ export function Nav({ products }) {
                         Products
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
-                        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                        <ul className="grid gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[500px] ">
                             {products?.map((component) => (
                                 <ListItem
                                     key={component.content._uid}
