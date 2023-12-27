@@ -6,6 +6,7 @@ import { SectionContainer } from "@components/Section";
 import { PageTitle } from "@components/Title";
 import { Icon } from "@iconify/react";
 import Image from "next/image";
+import Link from "next/link";
 
 export const HomeBanner = ({content}) => {
     const { heading, subHeading, heroImage } = content;
@@ -33,14 +34,14 @@ export const HomeBanner = ({content}) => {
                     <div className="mt-6 mb-16 text-center">
                         <ButtonGroup alignment="center">
                             <Button href="/products">Products</Button>
-                            <a
+                            <Link
                                 role="button"
                                 href="/contact"
                                 className="btn btn--secondary"
                             >
                                 Contact us
                                 <Icon icon="material-symbols:arrow-forward-rounded" />
-                            </a>
+                            </Link>
                         </ButtonGroup>
                     </div>
                 </MotionBTTContainer>
