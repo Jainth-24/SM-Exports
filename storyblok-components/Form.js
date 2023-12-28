@@ -7,14 +7,12 @@ export default function Form({ blok, allProducts }) {
         handleSubmit
     } = useForm();
 
-    function submitForm(data) {
-        console.log(data, blok.Endpoint);
-    }
     return (
         <form
+            action={`https://formsubmit.co/${blok.email}`}
+            method="POST"
             className="rounded-lg shadow-xl flex flex-col px-8 py-8 bg-white dark:bg-blue-500"
             {...storyblokEditable(blok)}
-            onSubmit={handleSubmit(submitForm)}
         >
             <h1 className="text-2xl font-bold dark:text-gray-50">
                 Send us a message
@@ -30,6 +28,14 @@ export default function Form({ blok, allProducts }) {
                     />
                 ))}
             </div>
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_subject" value="New submission!" />
+            <input
+                type="hidden"
+                name="_next"
+                value="https://smexports-eta.vercel.app/thanks"
+            />
+            <input type="hidden" name="_captcha" value="false" />
             <input
                 className="w-full flex justify-center py-2 px-4 rounded-md shadow text-sm font-medium  cursor-pointer btn btn--secondary mx-auto"
                 type="submit"
