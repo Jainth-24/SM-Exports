@@ -23,7 +23,7 @@ const components = {
 };
 
 storyblokInit({
-    accessToken: process.env.PUBLIC_SB_ACCESS_TOKEN,
+    accessToken: process.env.SB_ACCESS_TOKEN,
     use: [apiPlugin],
     bridge: true,
     components,
@@ -31,7 +31,7 @@ storyblokInit({
         region: "eu"
     }
 });
- 
+
 export default function App({ Component, pageProps }) {
     return <Component {...pageProps} />;
 }
