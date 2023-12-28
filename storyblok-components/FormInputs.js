@@ -1,8 +1,6 @@
 import { storyblokEditable, StoryblokComponent } from "@storyblok/react";
 
 export default function FormInputs({ blok, register, errors, allProducts }) {
-   
-
     return (
         <div {...storyblokEditable(blok)} className="mb-5">
             <label className="text-gray-500 font-light mt-8 dark:text-gray-50">
@@ -10,6 +8,7 @@ export default function FormInputs({ blok, register, errors, allProducts }) {
             </label>
             {blok.Type === "dropdown" ? (
                 <select
+                    name={blok.Name}
                     multiple // Use the 'multiple' attribute for multi-select
                     className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500"
                     {...register(blok.Name, {
@@ -17,7 +16,7 @@ export default function FormInputs({ blok, register, errors, allProducts }) {
                     })}
                 >
                     {allProducts.map((option) => (
-                        <option key={option} value={option.name}>
+                        <option key={option.uuid} value={option.name}>
                             {option.content.title}
                         </option>
                     ))}
@@ -26,6 +25,7 @@ export default function FormInputs({ blok, register, errors, allProducts }) {
                 <input
                     className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500"
                     type={blok.Type}
+                    name={blok.Name}
                     placeholder={blok.Placeholder}
                     {...register(blok.Name, {
                         required: blok.Type === "tel" ? false : true,
