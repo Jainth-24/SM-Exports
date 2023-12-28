@@ -39,7 +39,7 @@ export default function Form({ blok, allProducts }) {
     return (
         <form
             onSubmit={handleSubmit(onSubmit)}
-            className="rounded-lg shadow-xl flex flex-col px-8 py-8 bg-white dark:bg-blue-500"
+            className="rounded-lg shadow-xl flex flex-col px-8 py-8 bg-white dark:bg-blue-500 lg:mx-24"
             {...storyblokEditable(blok)}
         >
             <h1 className="text-2xl font-bold dark:text-gray-50">
