@@ -46,14 +46,14 @@ export const Header = ({ products }) => {
                         <Nav products={products} />
                     </div>
                     <ButtonGroup className="hidden md:block">
-                        <a
+                        <Link
                             role="button"
                             href="/contact"
                             className="btn btn--secondary ml-4"
                         >
                             Shop Now
                             <Icon icon="material-symbols:arrow-forward-rounded" />
-                        </a>
+                        </Link>
                     </ButtonGroup>
                     {/* Mobile Toggle Button */}
                     <button
