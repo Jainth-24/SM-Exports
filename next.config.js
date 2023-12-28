@@ -1,8 +1,6 @@
 /** @type {import('next').NextConfig} */
 
-const { createSecureHeaders } = require("next-secure-headers");
 const path = require("path");
-const fs = require("fs");
 
 const nextConfig = {
     reactStrictMode: true,

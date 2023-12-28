@@ -17,7 +17,7 @@ export const HomeBanner = ({content}) => {
                 <MotionBTTContainer transition={{ delay: 0.2, duration: 0.5 }}>
                     <BadgeGroup alignment="center">
                         <BadgeMessage>Discover SM Exports!</BadgeMessage>
-                        <BadgeIcon icon="game-icons:meal" />
+                        {/* <BadgeIcon icon="game-icons:meal" /> */}
                     </BadgeGroup>
                 </MotionBTTContainer>
                 {/* Appear Second */}
@@ -33,13 +33,13 @@ export const HomeBanner = ({content}) => {
                     </Content>
                     <div className="mt-6 mb-16 text-center">
                         <ButtonGroup alignment="center">
-                            <Button href="/products">Products</Button>
+                            <Button href="/contact">Contact us</Button>
                             <Link
                                 role="button"
-                                href="/contact"
+                                href="/products"
                                 className="btn btn--secondary"
                             >
-                                Contact us
+                                Products
                                 <Icon icon="material-symbols:arrow-forward-rounded" />
                             </Link>
                         </ButtonGroup>
