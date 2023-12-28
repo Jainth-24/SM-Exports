@@ -9,7 +9,7 @@ const Products = ({ products }) => {
     return (
         <Layout products={products}>
             <SEO
-                title="SM Exports - Your Gateway to Quality Grains 🚀"
+                title="SM Exports - Your Gateway to Quality Goods 🚀"
                 description="Welcome to SM Exports, your trusted partner for superior quality agricultural products. We take pride in delivering a diverse range of premium rice, wheat, and more to meet your culinary and nutritional needs. As a leading exporter, we prioritize excellence in every grain, ensuring that your kitchen is stocked with the finest ingredients from around the world."
             />
             <div className="main-wrapper bg-[#F3F5F8] relative z-10 pb-20 pt-20 ">

@@ -15,6 +15,7 @@ export const ContentImage = ({features}) => {
                         className={`process-item--image rounded-3xl ${
                             item.align === "left" ? "md:order-1" : ""
                         }`}
+                        data-aos="zoom-in"
                     >
                         <Image
                             src={item.image.filename}

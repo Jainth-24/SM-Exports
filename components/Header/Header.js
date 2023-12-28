@@ -51,7 +51,7 @@ export const Header = ({ products }) => {
                             href="/contact"
                             className="btn btn--secondary ml-4"
                         >
-                            Shop Now
+                            Contact Now
                             <Icon icon="material-symbols:arrow-forward-rounded" />
                         </Link>
                     </ButtonGroup>

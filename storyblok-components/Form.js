@@ -7,10 +7,38 @@ export default function Form({ blok, allProducts }) {
         handleSubmit
     } = useForm();
 
+
+     const onSubmit = async (data) => {
+         // You can perform any additional actions before submitting the form if needed
+         console.log("Form data submitted:", data);
+
+         // Call your form submission logic here
+         try {
+             const response = await fetch(
+                 `https://formsubmit.co/${blok.email}`,
+                 {
+                     method: "POST",
+                     headers: {
+                         "Content-Type": "application/json"
+                     },
+                     body: JSON.stringify(data)
+                 }
+             );
+
+             // Handle the form submission response if needed
+             console.log("Form submission response:", response);
+
+             // Redirect to the success page if the submission was successful
+             window.location.href = "https://smexports-eta.vercel.app/thanks";
+         } catch (error) {
+             console.error("Error submitting form:", error);
+             // Handle errors if needed
+         }
+     };
+
     return (
         <form
-            action={`https://formsubmit.co/${blok.email}`}
-            method="POST"
+            onSubmit={handleSubmit(onSubmit)}
             className="rounded-lg shadow-xl flex flex-col px-8 py-8 bg-white dark:bg-blue-500"
             {...storyblokEditable(blok)}
         >

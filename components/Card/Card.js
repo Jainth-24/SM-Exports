@@ -18,23 +18,25 @@ export const Card = ({
     const href =
         typeof link === "string" ? link : link?.href != null ? link.href : "";
     return (
-        <SectionContainer
-            className={clsx(
-                "card rounded-lg overflow-hidden",
-                {
-                    [CardType.default]: type === "default",
-                    [CardType.bordered]: type === "bordered"
-                },
-                className
-            )}
-        >
-            <Element
-                href={href}
-                target={link ? target : "_self"}
-                className="card--container"
+        
+            <SectionContainer
+                className={clsx(
+                    "card rounded-lg overflow-hidden",
+                    {
+                        [CardType.default]: type === "default",
+                        [CardType.bordered]: type === "bordered"
+                    },
+                    className
+                )}
             >
-                {children}
-            </Element>
-        </SectionContainer>
+                <Element
+                    href={href}
+                    target={link ? target : "_self"}
+                    className="card--container"
+                >
+                    {children}
+                </Element>
+            </SectionContainer>
+       
     );
 };

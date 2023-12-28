@@ -45,7 +45,7 @@ export function Nav({ products }) {
                                             SM Exports
                                         </div>
                                         <p className="text-sm leading-tight text-muted-foreground">
-                                            Your Gateway to Quality Grains
+                                            Your Gateway to Quality Goods
                                         </p>
                                     </Link>
                                 </NavigationMenuLink>
@@ -82,15 +82,7 @@ export function Nav({ products }) {
                         </ul>
                     </NavigationMenuContent>
                 </NavigationMenuItem>
-                <NavigationMenuItem>
-                    <Link href="/contact" legacyBehavior passHref>
-                        <NavigationMenuLink
-                            className={navigationMenuTriggerStyle()}
-                        >
-                            Contact
-                        </NavigationMenuLink>
-                    </Link>
-                </NavigationMenuItem>
+                
             </NavigationMenuList>
         </NavigationMenu>
     );

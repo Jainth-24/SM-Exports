@@ -44,6 +44,7 @@ export const Accordion = ({faq}) => {
     const [activeAccordion, setActiveAccordion] = useState(null);
 
     const accordionClickHandle = (id) => {
+        console.log(activeAccordion);
         setActiveAccordion(id === activeAccordion ? null : id);
     };
 
@@ -58,9 +59,9 @@ export const Accordion = ({faq}) => {
                         {
                             [accordionItemType.top]: index === 0,
                             [accordionItemType.default]:
-                                index > 0 && index < accordionData.length - 1,
+                                index > 0 && index < accordionItem.length - 1,
                             [accordionItemType.bottom]:
-                                index === accordionData.length - 1
+                                index === accordionItem.length - 1
                         }
                     )}
                 >
@@ -70,7 +71,7 @@ export const Accordion = ({faq}) => {
                             type="button"
                             aria-expanded={accordionItem.isOpen}
                             onClick={() =>
-                                accordionClickHandle(accordionItem.id)
+                                accordionClickHandle(accordionItem._uid)
                             }
                         >
                             {accordionItem.question}
@@ -84,9 +85,9 @@ export const Accordion = ({faq}) => {
                         className={clsx(
                             "accordion-item--content py-4 px-5 text-base",
                             {
-                                hidden: activeAccordion !== accordionItem.id, // Use hidden class to animate height to 0
+                                hidden: activeAccordion !== accordionItem._uid, // Use hidden class to animate height to 0
                                 "!visibility block":
-                                    activeAccordion === accordionItem.id // Use block class to show content again
+                                    activeAccordion === accordionItem._uid // Use block class to show content again
                             }
                         )}
                     >
