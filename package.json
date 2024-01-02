@@ -1,13 +1,9 @@
 {
-    "name": "nutritrack",
-    "version": "1.1.0",
-    "description": "NutriTrack - A customizable landing page theme built with AstroJS and TailwindCSS, specifically designed for Notion creators.",
+    "name": "sm-exports",
+    "version": "1.0.0",
+    "description": "Welcome to SM Exports, your trusted partner for superior quality agricultural products. We take pride in delivering a diverse range of premium rice, wheat, and more to meet your culinary and nutritional needs. As a leading exporter, we prioritize excellence in every grain, ensuring that your kitchen is stocked with the finest ingredients from around the world.",
     "main": "index.js",
     "private": true,
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/christian-luntok/nutritrack.git"
-    },
     "keywords": [
         "next",
         "nextjs",
@@ -17,8 +13,6 @@
         "tailwindcss",
         "tailwind"
     ],
-    "author": "chrstnl",
-    "homepage": "https://chrstnl.com/",
     "scripts": {
         "proxy": "mkcert -install && mkcert localhost && local-ssl-proxy --source 3010 --target 3000 --cert localhost.pem --key localhost-key.pem",
         "dev": "next dev",
