@@ -48,6 +48,6 @@ export async function getStaticProps() {
             story: contactstory ? contactstory : false,
             allProducts: allProducts ? allProducts : false
         },
-        revalidate: 3600
+        revalidate: 10
     };
 }

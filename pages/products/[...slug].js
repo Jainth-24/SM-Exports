@@ -40,7 +40,7 @@ export async function getStaticProps({ params }) {
                 product: product ? product : false,
                 allProducts: allProducts ? allProducts : false
             },
-            revalidate: 3600
+            revalidate: 10
         };
     } catch (error) {
         console.error("Error fetching data from Storyblok:", error);

@@ -137,6 +137,6 @@ export async function getStaticProps() {
         props: {
             stories: data ? data.stories : false
         },
-        revalidate: 3600
+        revalidate: 10
     };
 }
