@@ -16,14 +16,14 @@ import "aos/dist/aos.css"; // Import AOS styles
 import React, { useEffect } from "react";
 
 const components = {
-    page: Page,
-    Form: Form,
+    "page": Page,
+    "Form": Form,
     "Form Inputs": FormInputs,
-    Email: Email,
-    Required: Required,
+    "Email": Email,
+    "Required": Required,
     "Maximum Length": MaxLength,
     "Minimum Length": MinLength,
-    Numeric: Numeric
+    "Numeric": Numeric
 };
 
 const App = ({ Component, pageProps }) => {
