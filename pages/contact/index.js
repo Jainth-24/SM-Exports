@@ -17,7 +17,7 @@ export default function Contact({ story, allProducts }) {
                     title="SM Exports - Your Gateway to Quality Goods 🚀"
                     description="Welcome to SM Exports, your trusted partner for superior quality agricultural products. We take pride in delivering a diverse range of premium rice, wheat, and more to meet your culinary and nutritional needs. As a leading exporter, we prioritize excellence in every grain, ensuring that your kitchen is stocked with the finest ingredients from around the world."
                 />
-                <div className="main-wrapper bg-[#F3F5F8] relative z-10 pb-20 max-md:pt-40 lg:pt-14">
+                <div className="main-wrapper bg-[#F3F5F8] relative z-10 pb-28 max-md:pt-40 lg:pt-16 md:pt-40">
                     <div className="flex justify-center items-center self-center h-screen">
                         <StoryblokComponent
                             blok={story.content}

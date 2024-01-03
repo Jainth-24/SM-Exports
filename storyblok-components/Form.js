@@ -28,8 +28,6 @@ export default function Form({ blok, allProducts }) {
              // Handle the form submission response if needed
              console.log("Form submission response:", response);
 
-             // Redirect to the success page if the submission was successful
-             window.location.href = "https://smexports-eta.vercel.app/thanks";
          } catch (error) {
              console.error("Error submitting form:", error);
              // Handle errors if needed
@@ -65,7 +63,7 @@ export default function Form({ blok, allProducts }) {
             />
             <input type="hidden" name="_captcha" value="false" />
             <input
-                className="w-full py-3 text-xl rounded-md shadow font-medium cursor-pointer btn btn--secondary mx-auto 
+                className="w-full py-3 text-xl rounded-md shadow font-medium cursor-pointer
                bg-secondary-500  hover:bg-secondary-700 text-white focus:outline-none focus:shadow-outline-yellow active:bg-yellow-700"
                 type="submit"
             />
