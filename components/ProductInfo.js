@@ -44,7 +44,7 @@ function ProductInfo({ title, description, price }) {
                             <Link
                                 role="button"
                                 href="/contact"
-                                className="btn btn--secondary py-4"
+                                className="btn btn--secondary py-2"
                             >
                                 Buy Now
                                 <Icon icon="material-symbols:arrow-forward-rounded" />

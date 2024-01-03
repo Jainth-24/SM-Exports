@@ -7,7 +7,7 @@ function BackToProductButton() {
       <Link href="/products" passHref legacyBehavior>
           <a
               aria-label="back-to-products"
-              className="btn btn--primary mx-auto"
+              className="text-lg justify-center hover:text-blue-700"
           >
               <FontAwesomeIcon
                   icon={faArrowLeft}

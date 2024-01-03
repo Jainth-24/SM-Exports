@@ -65,7 +65,8 @@ export default function Form({ blok, allProducts }) {
             />
             <input type="hidden" name="_captcha" value="false" />
             <input
-                className="w-full flex justify-center py-2 px-4 rounded-md shadow text-sm font-medium  cursor-pointer btn btn--secondary mx-auto"
+                className="w-full py-3 text-xl rounded-md shadow font-medium cursor-pointer btn btn--secondary mx-auto 
+               bg-secondary-500  hover:bg-secondary-700 text-white focus:outline-none focus:shadow-outline-yellow active:bg-yellow-700"
                 type="submit"
             />
         </form>
