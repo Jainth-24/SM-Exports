@@ -1,42 +1,16 @@
 import { storyblokEditable, StoryblokComponent } from "@storyblok/react";
 import { useForm } from "react-hook-form";
+
 export default function Form({ blok, allProducts }) {
     const {
         register,
-        formState: { errors },
-        handleSubmit
+        formState: { errors }
     } = useForm();
-
-
-     const onSubmit = async (data) => {
-         // You can perform any additional actions before submitting the form if needed
-         console.log("Form data submitted:", data);
-
-         // Call your form submission logic here
-         try {
-             const response = await fetch(
-                 `https://formsubmit.co/${blok.email}`,
-                 {
-                     method: "POST",
-                     headers: {
-                         "Content-Type": "application/json"
-                     },
-                     body: JSON.stringify(data)
-                 }
-             );
-
-             // Handle the form submission response if needed
-             console.log("Form submission response:", response);
-
-         } catch (error) {
-             console.error("Error submitting form:", error);
-             // Handle errors if needed
-         }
-     };
 
     return (
         <form
-            onSubmit={handleSubmit(onSubmit)}
+            action={`https://formsubmit.co/${blok.email}`}
+            method="POST"
             className="rounded-lg shadow-xl flex flex-col px-8 py-8 bg-white dark:bg-blue-500 lg:mx-24"
             {...storyblokEditable(blok)}
         >
@@ -63,8 +37,7 @@ export default function Form({ blok, allProducts }) {
             />
             <input type="hidden" name="_captcha" value="false" />
             <input
-                className="w-full py-3 text-xl rounded-md shadow font-medium cursor-pointer
-               bg-secondary-500  hover:bg-secondary-700 text-white focus:outline-none focus:shadow-outline-yellow active:bg-yellow-700"
+                className="w-full flex justify-center py-2 px-4 rounded-md shadow text-sm font-medium cursor-pointer btn btn--secondary mx-auto"
                 type="submit"
             />
         </form>

@@ -9,7 +9,8 @@ export default function FormInputs({ blok, register, errors, allProducts }) {
             {blok.Type === "dropdown" ? (
                 <select
                     name={blok.Name}
-                    multiple // Use the 'multiple' attribute for multi-select
+                    multiple 
+                    required
                     className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500"
                     {...register(blok.Name, {
                         required: true
@@ -27,6 +28,7 @@ export default function FormInputs({ blok, register, errors, allProducts }) {
                     type={blok.Type}
                     name={blok.Name}
                     placeholder={blok.Placeholder}
+                    required
                     {...register(blok.Name, {
                         required: blok.Type === "tel" ? false : true,
                         pattern:
@@ -48,6 +50,7 @@ export default function FormInputs({ blok, register, errors, allProducts }) {
                 <textarea
                     name={blok.Name}
                     rows={5}
+                    required
                     placeholder={blok.Placeholder}
                     className="bg-transparent border-b p-4 w-full focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500 block"
                     {...register(blok.Name, {
